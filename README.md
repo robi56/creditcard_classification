@@ -17,15 +17,15 @@ print(head(data))
 ### Categorial Variables to Numeric 
 
 ```
-must_convert<-sapply(data,is.factor)       # logical vector telling if a variable needs to be displayed as numeric
-M2<-sapply(data[,must_convert],unclass)    # data.frame of all categorical variables now displayed as numeric
+must_convert<-sapply(data,is.factor)      
+M2<-sapply(data[,must_convert],unclass)    
 credit_card<-cbind(data[,!must_convert],M2) 
 ```
 ## Partitioning the data into traning and test by shuffing  
 ###https://stackoverflow.com/questions/17200114/how-to-split-data-into-training-testing-sets-using-sample-function
 
 ```
-set.seed(101) # Set Seed so that same sample can be reproduced in future also
+set.seed(101) 
 sample <- sample.int(n = nrow(credit_card), size = floor(.75*nrow(credit_card)), replace = F)
 train <- credit_card[sample, ]
 test  <- credit_card[-sample, ]
@@ -64,6 +64,7 @@ colsums = apply(cm, 2, sum) # number of predictions per class
 p = rowsums / n # distribution of instances over the actual classes
 q = colsums / n # distribution of instances over the predicted classes
 ```
+
 ### Accuracy 
 ```
 accuracy = sum(diag) / n 
