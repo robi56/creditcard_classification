@@ -17,7 +17,6 @@ https://cran.r-project.org/web/packages/C50/index.html
 ## Model Build and Prediction
 
 1. Builing Model 
-
 2.Prediction 
 
 
