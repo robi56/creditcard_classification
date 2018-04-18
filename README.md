@@ -10,10 +10,14 @@ https://cran.r-project.org/web/packages/C50/index.html
 
 
 ## Data Preprossing 
-1. categoring to numerical value conversation 
+1. categoring to numerical value conversation
+
 2. Random Shuffling and train-test Spliting 
+
 ## Model Build and Prediction
+
 1. Builing Model 
+
 2.Prediction 
 
 
