@@ -14,13 +14,13 @@ print(head(data))
 
 ## data processing [The dataset contains categorical varibles, need categorical to numerical conversion] 
 
-###Categorial Variables to Numeric 
+### Categorial Variables to Numeric 
 ```
 must_convert<-sapply(data,is.factor)       # logical vector telling if a variable needs to be displayed as numeric
 M2<-sapply(data[,must_convert],unclass)    # data.frame of all categorical variables now displayed as numeric
 credit_card<-cbind(data[,!must_convert],M2) 
 ```
-##Partitioning the data into traning and test by shuffing  
+## Partitioning the data into traning and test by shuffing  
 ###https://stackoverflow.com/questions/17200114/how-to-split-data-into-training-testing-sets-using-sample-function
 ```
 set.seed(101) # Set Seed so that same sample can be reproduced in future also
@@ -30,24 +30,24 @@ test  <- credit_card[-sample, ]
 
 column_names = c("X0","X1.25","X01","X0.1","b","X30.83", "u", "g","w","v","t","t.1","f","g.1","X00202")
 ```
-##Classification using c5.0 algorithm 
+## Classification using c5.0 algorithm 
 ```
 tree_mod <- C5.0(x =train[colum_names], y = as.factor(train$X.))
 summary(tree_mod)
 plot(tree_mod)
 ```
 
-##Prediction 
+## Prediction 
 ```
 predicted=predict(tree_mod, newdata = test[, colum_names])
 ```
-###print(output_labels)
+### print(output_labels)
 ```
 cm = as.matrix(table(Actual = test$X., Predicted = predicted)) # create the confusion matrix
 print(cm)
 ```
 
-##Evaluting the model performace
+## Evaluting the model performace
 ```
 n = sum(cm) # number of instances
 nc = nrow(cm) # number of classes
@@ -57,7 +57,7 @@ colsums = apply(cm, 2, sum) # number of predictions per class
 p = rowsums / n # distribution of instances over the actual classes
 q = colsums / n # distribution of instances over the predicted classes
 ```
-###Accuracy 
+### Accuracy 
 ```
 accuracy = sum(diag) / n 
 print("Accuracy: ")
