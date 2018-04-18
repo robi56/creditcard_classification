@@ -1,6 +1,8 @@
 # creditcard_classification
 Develop a classifier for predicating Credit  Card Approval 
 
+The project is develped using Rstudio 
+
 ## DataSet Description 
 The dataset is collected from  http://archive.ics.uci.edu/ml/datasets/credit+approval
 
