@@ -22,7 +22,9 @@ https://cran.r-project.org/web/packages/C50/index.html
 
 2.Prediction 
 
-## Analysis result is available this pdf
+## Analysis Result
+
+Analysis Result is available this pdf
 
 https://github.com/robi56/creditcard_classification/blob/master/creditcard_classification.pdf
 
